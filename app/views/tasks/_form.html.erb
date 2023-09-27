@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'addTask.css', "data-turbo-track": "reload" %>
+<div class="form">
+  <p class="heading"><%= @name %></p>
+  <%= form_with(model: task) do |form| %>
+    <% if task.errors.any? %>
+      <div class="error" >
+        <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+        <ul>
+          <% task.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="category">
+      <%= form.label :category, class: "label"%>
+      <%= form.text_field :category, class: "text-field-category" %>
+    </div>
+    <div class="description">
+      <%= form.label :description, class: "label" %>
+      <%= form.text_field :description, class: "text-field-desciption" %>
+    </div>
+    <div class="time">
+      <%= form.label :time, class: "label"%>
+      <%= form.text_field :time, class: "text-field-time" %>
+    </div>
+      <%= form.submit  class: "submit"%>
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+* {
+  font-size: 1.25rem;
+}
+
+.category,
+.description,
+.time {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.error {
+  color: red;
+}
+
+.label {
+  margin-right: 2rem;
+}
+
+.form {
+  border: 1px solid #888;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 40vh;
+  padding: 1rem;
+  align-items: center;
+}
+
+.submit {
+  background-color: aqua;
+  color: white;
+  position: relative;
+  left: 8rem;
+}
+
+.text-field-category {
+  width: 15.5rem;
+  margin-left: 1rem;
+}
+
+.text-field-description {
+  margin-left: 1rem;
+}
+
+.text-field-time {
+  margin-left: 3rem;
+  width: 15.5rem;
+}
