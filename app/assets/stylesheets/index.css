@@ -1,0 +1,90 @@
+.btn-add-task {
+  background-color: blueviolet;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.btn-edit-task,
+.btn-delete-task {
+  border-radius: 0.5rem;
+  border: 0.15rem solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn-delete-task {
+  background-color: red;
+}
+
+.btn-edit-task {
+  background-color: orange;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: bolder;
+  position: absolute;
+  right: 3rem;
+  top: 2.05rem;
+}
+
+.close:hover {
+  color: red;
+}
+
+.heading {
+  font-size: 3rem;
+}
+
+.head-container {
+  text-align: center;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.modal-content {
+  background-color: #fff;
+  left: 50%;
+  position: absolute;
+  padding: 1.25rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.notice {
+  color: green;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.table-heading,
+.table-row,
+.row-content {
+  border: 0.15rem solid violet;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.table-heading {
+  font-weight: bolder;
+}
+
+.table-task {
+  align-items: center;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

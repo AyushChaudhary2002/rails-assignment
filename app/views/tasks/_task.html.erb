@@ -1,14 +1,17 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Category:</strong>
-    <%= task.category %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= task.description %>
-  </p>
-  <p>
-    <strong>Time:</strong>
-    <%= task.time %>
-  </p>
-</div>
+<tr class="table-row" id="<%= dom_id task %>">
+  <td class="row-content">
+    <%= task.category.capitalize() %>
+  </td>
+  <td class="row-content">
+    <%= task.description.capitalize() %>
+  </td>
+  <td class="row-content">
+    <%= task.time.capitalize() + "Hr." %>
+  </td>
+  <td class="row-content">
+    <%= button_to "Edit", edit_task_path(task), method: :get, class: "btn-edit-task js-edit" %>
+  </td>
+  <td class="row-content">
+    <%= button_to "Delete", task_path(task), method: :delete, class: "btn-delete-task" %>
+  </td>
+</tr>

@@ -1,11 +1,27 @@
-<p style="color: green"><%= notice %></p>
-<h1>Tasks</h1>
-<div id="tasks">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
-  <% end %>
+<%= stylesheet_link_tag 'index.css', "data-turbo-track": "reload" %>
+<%= javascript_include_tag 'modal.js' %>
+<div class="head-container">
+  <p class="heading">Onboarding Application</p>
+  <button class="btn-add-task js-open">Add Task</button>
+  <div class="modal js-modal">
+    <div class="modal-content">
+      <span class="close js-close">&times;</span>
+      <div class="js-content"></div>
+    </div>
+  </div>
 </div>
-<%= link_to "New task", new_task_path %>
+<p class="notice"><%= notice %></p>
+<div class="main-container" id="tasks">
+  <table class="table-task">
+    <tr class="table-heading">
+      <td class="row-content">Category</td>
+      <td class="row-content">Task</td>
+      <td class="row-content">Time</td>
+      <td class="row-content">Edit</td>
+      <td class="row-content">Delete</td>
+    </tr>
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  </table>
+</div>

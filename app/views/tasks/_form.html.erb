@@ -1,10 +1,13 @@
 <%= stylesheet_link_tag 'addTask.css', "data-turbo-track": "reload" %>
+
 <div class="form">
-  <p class="heading"><%= @name %></p>
+  <p class="task-heading"><%= @name %></p>
   <%= form_with(model: task) do |form| %>
     <% if task.errors.any? %>
       <div class="error" >
-        <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+        <h2><%= pluralize(task.errors.count, "error") %>
+          prohibited this task from being saved:
+        </h2>
         <ul>
           <% task.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -12,18 +15,18 @@
         </ul>
       </div>
     <% end %>
-    <div class="category">
+    <div class="input category">
       <%= form.label :category, class: "label"%>
-      <%= form.text_field :category, class: "text-field-category" %>
+      <%= form.text_field :category, class: "text-field" %>
     </div>
-    <div class="description">
+    <div class="input description">
       <%= form.label :description, class: "label" %>
-      <%= form.text_field :description, class: "text-field-desciption" %>
+      <%= form.text_field :description, class: "text-field" %>
     </div>
-    <div class="time">
+    <div class="input time">
       <%= form.label :time, class: "label"%>
-      <%= form.text_field :time, class: "text-field-time" %>
+      <%= form.text_field :time, class: "text-field" %>
     </div>
-      <%= form.submit  class: "submit"%>
+    <%= form.submit  class: "submit"%>
   <% end %>
 </div>
