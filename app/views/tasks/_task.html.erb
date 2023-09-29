@@ -6,12 +6,12 @@
     <%= task.description.capitalize() %>
   </td>
   <td class="row-content">
-    <%= task.time.capitalize() + "Hr." %>
+    <%= task.time.to_s + "Hr." %>
   </td>
   <td class="row-content">
     <%= button_to "Edit", edit_task_path(task), method: :get, class: "btn-edit-task js-edit" %>
   </td>
   <td class="row-content">
-    <%= button_to "Delete", task_path(task), method: :delete, class: "btn-delete-task" %>
+    <%= button_to "Delete", hide_task_path(task), method: :get, class: "btn-delete-task" %>
   </td>
 </tr>

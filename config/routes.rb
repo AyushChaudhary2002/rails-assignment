@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'tasks#index'
+  get 'task/:id/hide', to: 'tasks#hidden', as: 'hide/task'
 end

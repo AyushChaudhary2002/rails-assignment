@@ -1,9 +1,19 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .btn-add-task {
   background-color: blueviolet;
   border-radius: 0.5rem;
   color: white;
   font-size: 2rem;
   padding: 1rem;
+}
+.btn-add-task:hover {
+  background-color: violet;
+  transform: scale(1.25);
 }
 
 .btn-edit-task,
@@ -22,6 +32,15 @@
   background-color: orange;
 }
 
+.btn-edit-task:hover {
+  background-color: orangered;
+}
+
+.btn-delete-task:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+}
+
 .close {
   cursor: pointer;
   font-size: 3rem;
@@ -36,11 +55,16 @@
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 4rem;
+  color: whitesmoke;
+  margin-bottom: 1rem;
 }
 
 .head-container {
   text-align: center;
+  background-color: cadetblue;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .modal {
@@ -66,6 +90,7 @@
   color: green;
   font-size: 2rem;
   text-align: center;
+  font-weight: bolder;
 }
 
 .table-heading,
