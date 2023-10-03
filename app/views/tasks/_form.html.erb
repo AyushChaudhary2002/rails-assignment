@@ -1,18 +1,13 @@
 <%= stylesheet_link_tag 'addTask.css', "data-turbo-track": "reload" %>
-
 <div class="form">
   <p class="task-heading"><%= @name %></p>
   <%= form_with(model: task) do |form| %>
     <% if task.errors.any? %>
       <div class="error" >
-        <h2><%= pluralize(task.errors.count, "error") %>
-          prohibited this task from being saved:
-        </h2>
-        <ul>
-          <% task.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+        <%flash[:error] ||= []%>
+        <% task.errors.each do |error| %>
+          <% flash[:error] << error.full_message %>
+        <% end %>
       </div>
     <% end %>
     <div class="input category">
@@ -27,6 +22,6 @@
       <%= form.label :time, class: "label"%>
       <%= form.text_field :time, class: "text-field" %>
     </div>
-    <%= form.submit  class: "submit"%>
+    <%= form.submit class: "submit"%>
   <% end %>
 </div>

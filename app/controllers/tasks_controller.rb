@@ -25,28 +25,18 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    if constraint_passed?
-      @task = Task.new(task_params)
-  
-      respond_to do |format|
-        if @task.save
-          format.html { redirect_to tasks_path, notice: "Task was successfully created." }
-          format.json { render :show, status: :created, location: @task }
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @task.errors, status: :unprocessable_entity }
-        end
+    @task = Task.new(task_params)
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to tasks_path, notice: "Task was successfully created." }
+        format.json { render :show, status: :created, location: @task }
+      else
+        flash[:error] = @task.errors.full_messages.join(", ") 
+        format.html { redirect_to tasks_path, status: :unprocessable_entity }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
       end
-    else
-      flash[:error] = "Category already exists in the database!"
-      redirect_to tasks_path
     end
   end
-  
-  def constraint_passed?
-    !Task.exists?(category: task_params[:category])
-  end
-  
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
@@ -55,7 +45,8 @@ class TasksController < ApplicationController
         format.html { redirect_to tasks_path, notice: "Task was successfully updated." }
         format.json { render :show, status: :ok, location: @task }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        flash[:error] = @task.errors.full_messages.join(", ") 
+        format.html { redirect_to tasks_path, status: :unprocessable_entity }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end

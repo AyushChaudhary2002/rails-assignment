@@ -22,6 +22,8 @@
   border: 0.15rem solid white;
   color: white;
   padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
 }
 
 .btn-delete-task {
@@ -30,15 +32,16 @@
 
 .btn-edit-task {
   background-color: orange;
+
 }
 
 .btn-edit-task:hover {
-  background-color: orangered;
+  background-color: grey;
 }
 
 .btn-delete-task:hover {
   background-color: rgba(0, 0, 0, 0.7);
-  transform: scale(1.25);
+  transform: scale(1.05);
 }
 
 .close {
@@ -87,10 +90,13 @@
 }
 
 .notice {
-  color: green;
+  color: white;
   font-size: 2rem;
   text-align: center;
   font-weight: bolder;
+  background-color: green;
+  margin: 1rem;
+  
 }
 
 .table-heading,

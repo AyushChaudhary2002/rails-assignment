@@ -12,6 +12,6 @@
     <%= button_to "Edit", edit_task_path(task), method: :get, class: "btn-edit-task js-edit" %>
   </td>
   <td class="row-content">
-    <%= button_to "Delete", hide_task_path(task), method: :get, class: "btn-delete-task" %>
+    <%= button_to "Delete", hide_task_path(task), method: :get, data: { turbo_confirm: "Are you really want to delete?" }, class: "btn-delete-task" %>
   </td>
 </tr>

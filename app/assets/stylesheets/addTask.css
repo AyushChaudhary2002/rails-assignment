@@ -1,8 +1,10 @@
 .error {
-  color: red;
+  background-color: red;
+  color: white;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bolder;
+  margin: 1rem;
 }
 
 .form {
@@ -31,17 +33,25 @@
 
 .submit {
   background-color: blueviolet;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   color: white;
   font-weight: bolder;
   left: 5rem;
   position: relative;
   padding: 0.5rem;
+  cursor: pointer;
+}
+
+.submit:hover{
+  background-color: purple;
+  transform: scale(1.05);
 }
 
 .text-field {
-  margin: 0.75rem 0rem;
+  border: 0.15rem solid grey;
   padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
   width: 15rem;
 }
 

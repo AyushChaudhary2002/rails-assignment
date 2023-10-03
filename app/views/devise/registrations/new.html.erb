@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'signUp.css', "data-turbo-track": "reload" %>
+<div class="devise-form">
+  <p class="devise-heading">Sign Up</p>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="devise-field">
+      <%= f.label :email, class: "devise-label" %>
+      <%= f.email_field :email, class: "devise-input-field", autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="devise-field">
+      <%= f.label :password, class: "devise-label" %>
+      <%= f.password_field :password, class: "devise-input-field", autocomplete: "new-password" %>
+    </div>
+    <div class="devise-field">
+      <%= f.label :password_confirmation, class: "devise-label"  %>
+      <%= f.password_field :password_confirmation, class: "devise-input-field", autocomplete: "new-password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "devise-action-btn" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
