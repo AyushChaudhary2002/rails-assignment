@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'index.css', "data-turbo-track": "reload" %>
+<%= javascript_include_tag 'modal.js' %>
+<div class="head-container">
+  <p class="heading">Onboarding Application</p>
+  <button class="btn-add-task js-open">Add Task</button>
+  <div class="modal js-modal">
+    <div class="modal-content">
+      <span class="close js-close">&times;</span>
+      <div class="js-content"></div>
+    </div>
+  </div>
+</div>
+<p class="notice"><%= notice %></p>
+<p class="error"><%= flash[:error]%></p>
+<div class="main-container" id="tasks">
+  <table class="table-task">
+    <tr class="table-heading">
+      <td class="row-content">Category</td>
+      <td class="row-content">Task</td>
+      <td class="row-content">Time</td>
+      <td class="row-content">Edit</td>
+      <td class="row-content">Delete</td>
+    </tr>
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  </table>
+</div>

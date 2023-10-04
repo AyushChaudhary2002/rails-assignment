@@ -1,0 +1,17 @@
+<tr class="table-row" id="<%= dom_id task %>">
+  <td class="row-content">
+    <%= task.category.capitalize() %>
+  </td>
+  <td class="row-content">
+    <%= task.description.capitalize() %>
+  </td>
+  <td class="row-content">
+    <%= task.time.to_s + "Hr." %>
+  </td>
+  <td class="row-content">
+    <%= button_to "Edit", edit_task_path(task), method: :get, class: "btn-edit-task js-edit" %>
+  </td>
+  <td class="row-content">
+    <%= button_to "Delete", hide_task_path(task), method: :get, data: { turbo_confirm: "Are you really want to delete?" }, class: "btn-delete-task" %>
+  </td>
+</tr>

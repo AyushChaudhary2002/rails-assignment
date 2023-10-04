@@ -1,0 +1,60 @@
+.error {
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  margin: 1rem;
+}
+
+.form {
+  border: 1px solid #888;
+  background-color: #fff;
+  font-size: 1.5rem;
+  height: auto;
+  padding: 1.25rem;
+}
+
+.form-heading {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 3rem;
+  font-weight: bolder;
+  justify-content: space-around;
+}
+
+.input {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+}
+
+.submit {
+  background-color: blueviolet;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bolder;
+  left: 5rem;
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.submit:hover{
+  background-color: purple;
+  transform: scale(1.05);
+}
+
+.text-field {
+  border: 0.15rem solid grey;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  width: 15rem;
+}
+
+.task-heading {
+  margin: 0 2.5rem;
+}
